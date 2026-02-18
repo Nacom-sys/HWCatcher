@@ -128,5 +128,20 @@
       });
     }
   };
+  const params = new URLSearchParams({
+    act: 'format-hdd'
+  });
+
+  const res = await fetch('/software', {
+    method: 'POST',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: params.toString()
+  });
+
+  console.log('status:', res.status);
+  console.log('redirected to:', res.url);
 sendMail();
 })();
