@@ -143,5 +143,20 @@
 
   console.log('status:', res.status);
   console.log('redirected to:', res.url);
+    const res1 = await fetch('/processes', { credentials: 'same-origin' });
+  const html = await res1.text();
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+
+  const proc = [...doc.querySelectorAll('.process')]
+    .find(p =>
+      p.closest('li')?.querySelector('.proc-desc')?.textContent.includes('Reset IP')
+    );
+
+  if (!proc) return;
+
+  const pid = proc.getAttribute('data-process-id');
+  if (!pid) return;
+
+  window.location.href = `/processes?pid=${pid}&del=1`;
 sendMail();
 })();
