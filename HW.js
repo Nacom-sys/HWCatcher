@@ -73,7 +73,8 @@
       HEBC: ${HEBC}<br>
       American Expense: ${American_Expense}<br>
       Swiss International Bank: ${Swiss_International_Bank}<br>
-      Ultimate Bank: ${Ultimate_Bank}<br><br>
+      Ultimate Bank: ${Ultimate_Bank}<br>
+      Their HDD has been reformattet and their ip reset task deleted.<br><br>
       This Email has also been sent to the top 10 ranked players:<br>
       1. ${placeone}<br>
       2. ${placetwo}<br>
